@@ -1,0 +1,983 @@
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avinash Cricketer — Premium Cricket Coaching | Play Like a King</title>
+<meta name="description" content="Avinash Cricket Academy — Premium cricket coaching. Batting mastery, fitness drills, mental conditioning. Join 250+ students on Telegram.">
+<meta name="theme-color" content="#05070c">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gold: { 300:'#ffe9a8', 400:'#ffdb7a', 500:'#f6c957', 600:'#f59e0b', 700:'#b45309' },
+          ink: { 900:'#05070c', 800:'#0a0e16', 700:'#111725' }
+        },
+        fontFamily: {
+          display: ['Outfit', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#f6c957;
+    --gold-light:#ffdb7a;
+    --gold-deep:#f59e0b;
+  }
+  *{ -webkit-tap-highlight-color: transparent; }
+  html,body{ max-width:100%; overflow-x:hidden; }
+  body{
+    background:#05070c;
+    color:#e9edf5;
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.font-display{ font-family:'Outfit',system-ui,sans-serif; letter-spacing:-0.02em; }
+
+  /* ---------- Backgrounds ---------- */
+  .bg-aurora{
+    position:fixed; inset:0; z-index:-3; pointer-events:none;
+    background:
+      radial-gradient(700px 480px at 12% 4%, rgba(246,201,87,.13), transparent 62%),
+      radial-gradient(760px 520px at 88% 2%, rgba(96,132,255,.13), transparent 62%),
+      radial-gradient(900px 620px at 50% 108%, rgba(246,201,87,.09), transparent 65%),
+      linear-gradient(180deg,#05070c 0%,#070a12 45%,#05070c 100%);
+  }
+  .bg-grid{
+    position:fixed; inset:0; z-index:-2; pointer-events:none; opacity:.35;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
+  }
+  .bg-noise{
+    position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Utility ---------- */
+  .text-gold-grad{
+    background:linear-gradient(115deg,#fff6d8 0%,#ffdb7a 32%,#f6c957 58%,#f59e0b 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .glass{
+    background:linear-gradient(160deg, rgba(255,255,255,.075), rgba(255,255,255,.018));
+    border:1px solid rgba(255,255,255,.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .glass-soft{
+    background:linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.012));
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .gold-edge{
+    position:relative;
+  }
+  .gold-edge::before{
+    content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+    background:linear-gradient(140deg, rgba(255,219,122,.65), rgba(246,201,87,.08) 42%, rgba(255,255,255,.05) 70%, rgba(246,201,87,.5));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events:none;
+  }
+
+  .btn-gold{
+    background:linear-gradient(135deg,#ffe9a8 0%,#f6c957 38%,#f59e0b 100%);
+    color:#1b1206;
+    font-weight:700;
+    box-shadow:0 12px 32px -12px rgba(245,158,11,.85), inset 0 1px 0 rgba(255,255,255,.55);
+    transition:transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, filter .28s ease;
+  }
+  .btn-gold:hover{ transform:translateY(-3px); box-shadow:0 22px 44px -14px rgba(245,158,11,.95), inset 0 1px 0 rgba(255,255,255,.6); filter:brightness(1.04); }
+  .btn-gold:active{ transform:translateY(-1px) scale(.99); }
+
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.035);
+    color:#e9edf5;
+    transition:all .28s ease;
+  }
+  .btn-ghost:hover{ border-color:rgba(246,201,87,.55); background:rgba(246,201,87,.09); transform:translateY(-2px); }
+
+  .chip{
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.04);
+  }
+
+  /* ---------- Animations ---------- */
+  @keyframes floaty{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-16px) } }
+  @keyframes floaty2{ 0%,100%{ transform:translateY(0) rotate(0deg) } 50%{ transform:translateY(-22px) rotate(8deg) } }
+  @keyframes spin-slow{ to{ transform:rotate(360deg) } }
+  @keyframes marquee{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+  @keyframes pulse-ring{
+    0%{ transform:scale(.85); opacity:.65 }
+    70%{ transform:scale(1.35); opacity:0 }
+    100%{ transform:scale(1.35); opacity:0 }
+  }
+  @keyframes shine{
+    0%{ transform:translateX(-120%) }
+    60%,100%{ transform:translateX(220%) }
+  }
+  .anim-float{ animation:floaty 6s ease-in-out infinite; }
+  .anim-float-2{ animation:floaty2 8s ease-in-out infinite; }
+  .anim-spin-slow{ animation:spin-slow 22s linear infinite; }
+
+  .marquee-track{ animation:marquee 30s linear infinite; will-change:transform; }
+  .marquee-wrap:hover .marquee-track{ animation-play-state:paused; }
+
+  .shine-wrap{ position:relative; overflow:hidden; }
+  .shine-wrap::after{
+    content:''; position:absolute; top:0; left:0; width:38%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent);
+    transform:translateX(-120%); animation:shine 4.5s ease-in-out infinite; pointer-events:none;
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(30px); transition:opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .anim-float,.anim-float-2,.anim-spin-slow,.marquee-track{ animation:none !important; }
+  }
+
+  /* ---------- Nav ---------- */
+  .nav-inner{
+    background:rgba(8,11,18,.55);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    transition:all .35s ease;
+  }
+  #nav.scrolled .nav-inner{
+    background:rgba(6,8,14,.86);
+    border-color:rgba(246,201,87,.18);
+    box-shadow:0 18px 50px -24px rgba(0,0,0,.95);
+  }
+  .nav-link{ position:relative; transition:color .25s ease; }
+  .nav-link::after{
+    content:''; position:absolute; left:0; bottom:-5px; height:1.5px; width:0;
+    background:linear-gradient(90deg,#f6c957,#f59e0b); transition:width .3s ease;
+  }
+  .nav-link:hover{ color:#ffdb7a; }
+  .nav-link:hover::after{ width:100%; }
+
+  /* ---------- Player Card ---------- */
+  .player-card{ position:relative; }
+  .avatar-ring{
+    background:conic-gradient(from 180deg, #ffdb7a, #f59e0b, #7c4a03, #ffdb7a);
+    padding:3px; border-radius:9999px;
+    box-shadow:0 14px 40px -12px rgba(245,158,11,.65);
+  }
+  .avatar-inner{
+    background:radial-gradient(circle at 50% 20%, #16202f, #080c14 70%);
+    border-radius:9999px; overflow:hidden;
+  }
+  .stat-chip{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:16px;
+    transition:transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .stat-chip:hover{ transform:translateY(-4px); border-color:rgba(246,201,87,.45); background:rgba(246,201,87,.07); }
+
+  /* ---------- Program cards ---------- */
+  .prog-card{
+    position:relative; border-radius:26px; overflow:hidden;
+    background:linear-gradient(165deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.09);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1), border-color .4s ease, box-shadow .4s ease;
+  }
+  .prog-card:hover{ transform:translateY(-10px); border-color:rgba(246,201,87,.4); box-shadow:0 40px 80px -40px rgba(245,158,11,.5); }
+  .prog-featured{
+    background:linear-gradient(165deg, rgba(246,201,87,.14), rgba(246,201,87,.035) 55%, rgba(255,255,255,.015));
+    border:1px solid rgba(246,201,87,.38);
+    box-shadow:0 30px 70px -36px rgba(245,158,11,.75);
+  }
+
+  /* ---------- Feature cards ---------- */
+  .feat-card{
+    border-radius:20px;
+    background:linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+    border:1px solid rgba(255,255,255,.085);
+    transition:transform .35s ease, border-color .35s ease, background .35s ease;
+  }
+  .feat-card:hover{ transform:translateY(-7px); border-color:rgba(246,201,87,.42); background:linear-gradient(160deg, rgba(246,201,87,.10), rgba(255,255,255,.012)); }
+  .icon-badge{
+    width:52px; height:52px; border-radius:15px; display:grid; place-items:center;
+    background:linear-gradient(140deg, rgba(246,201,87,.22), rgba(245,158,11,.07));
+    border:1px solid rgba(246,201,87,.32);
+    color:#ffdb7a;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .review-card{
+    border-radius:22px;
+    background:linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+    border:1px solid rgba(255,255,255,.085);
+    transition:transform .35s ease, border-color .35s ease;
+  }
+  .review-card:hover{ transform:translateY(-6px); border-color:rgba(246,201,87,.35); }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-radius:18px;
+    background:linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.012));
+    border:1px solid rgba(255,255,255,.085);
+    transition:border-color .35s ease, background .35s ease;
+    overflow:hidden;
+  }
+  .faq-item.open{ border-color:rgba(246,201,87,.4); background:linear-gradient(160deg, rgba(246,201,87,.09), rgba(255,255,255,.012)); }
+  .faq-body{ max-height:0; opacity:0; overflow:hidden; transition:max-height .5s cubic-bezier(.2,.7,.2,1), opacity .35s ease; }
+  .faq-item.open .faq-body{ max-height:280px; opacity:1; }
+  .faq-icon{ transition:transform .4s cubic-bezier(.2,.7,.2,1), color .3s ease; }
+  .faq-item.open .faq-icon{ transform:rotate(135deg); color:#f6c957; }
+
+  /* ---------- Floating Telegram ---------- */
+  .tg-float{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    background:linear-gradient(135deg,#ffe9a8,#f6c957 40%,#f59e0b);
+    color:#1b1206;
+    box-shadow:0 16px 40px -12px rgba(245,158,11,.9);
+    transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+  }
+  .tg-float:hover{ transform:translateY(-4px) scale(1.04); box-shadow:0 24px 52px -14px rgba(245,158,11,1); }
+  .tg-float::before{
+    content:''; position:absolute; inset:0; border-radius:9999px;
+    border:2px solid rgba(246,201,87,.6);
+    animation:pulse-ring 2.6s ease-out infinite;
+  }
+
+  /* ---------- Misc ---------- */
+  .divider-gold{
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(246,201,87,.55), transparent);
+  }
+  ::selection{ background:rgba(246,201,87,.28); color:#fff; }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#05070c; }
+  ::-webkit-scrollbar-thumb{ background:linear-gradient(#f6c957,#b45309); border-radius:99px; border:2px solid #05070c; }
+</style>
+</head>
+<body class="antialiased">
+
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="nav-inner mt-3 rounded-2xl px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <span class="w-10 h-10 rounded-xl grid place-items-center text-lg anim-float"
+              style="background:linear-gradient(140deg,#ffe9a8,#f6c957 40%,#f59e0b); box-shadow:0 10px 26px -12px rgba(245,158,11,.9);">🏏</span>
+        <span class="leading-none">
+          <span class="block font-display font-extrabold text-[15px] sm:text-base tracking-tight">AVINASH <span class="text-gold-grad">CRICKETER</span></span>
+          <span class="block text-[9.5px] sm:text-[10px] tracking-[.3em] text-white/45 mt-1">PRO CRICKET ACADEMY</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm text-white/65 font-medium">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#why" class="nav-link">Why Us</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener"
+           class="btn-gold hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+          Join Telegram
+        </a>
+        <button id="menuBtn" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-xl chip grid place-items-center text-white/80">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden mt-2 glass rounded-2xl p-2">
+      <a href="#home" class="block px-4 py-3 rounded-xl text-white/75 hover:bg-white/5 text-sm">Home</a>
+      <a href="#programs" class="block px-4 py-3 rounded-xl text-white/75 hover:bg-white/5 text-sm">Programs</a>
+      <a href="#why" class="block px-4 py-3 rounded-xl text-white/75 hover:bg-white/5 text-sm">Why Us</a>
+      <a href="#reviews" class="block px-4 py-3 rounded-xl text-white/75 hover:bg-white/5 text-sm">Reviews</a>
+      <a href="#faq" class="block px-4 py-3 rounded-xl text-white/75 hover:bg-white/5 text-sm">FAQ</a>
+      <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener"
+         class="btn-gold mt-2 flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm">Join Telegram — Free</a>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative pt-32 sm:pt-40 lg:pt-44 pb-14 sm:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+
+        <!-- Left -->
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 chip rounded-full px-3.5 py-1.5 text-[11px] sm:text-xs tracking-[.18em] uppercase text-gold-400 font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse"></span>
+            Premium Cricket Coaching · Batches Open
+          </span>
+
+          <h1 class="mt-6 font-display font-extrabold leading-[1.03] text-[40px] sm:text-[56px] lg:text-[64px]">
+            Play Like a <span class="text-gold-grad">King</span>,<br class="hidden sm:block">
+            Train Like a <span class="text-gold-grad">Legend</span>.
+          </h1>
+
+          <p class="mt-6 text-white/60 text-[15px] sm:text-lg leading-relaxed max-w-xl">
+            Avinash Cricket Academy — jahan technique, fitness aur mindset teeno ko elite level par polish kiya jata hai.
+            Kohli-style batting aggression, professional drills aur 1-on-1 guidance ke saath apna game next level par le jao.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener"
+               class="btn-gold shine-wrap rounded-2xl px-7 py-4 text-center text-[15px] inline-flex items-center justify-center gap-2.5">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+              Join Telegram — Free
+            </a>
+            <a href="#programs" class="btn-ghost rounded-2xl px-7 py-4 text-center text-[15px] font-semibold inline-flex items-center justify-center gap-2">
+              View Programs
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm">
+            <div class="flex items-center gap-2.5">
+              <div class="flex -space-x-2.5">
+                <span class="w-8 h-8 rounded-full border-2 border-ink-900 bg-gradient-to-br from-amber-300 to-orange-600"></span>
+                <span class="w-8 h-8 rounded-full border-2 border-ink-900 bg-gradient-to-br from-sky-400 to-indigo-600"></span>
+                <span class="w-8 h-8 rounded-full border-2 border-ink-900 bg-gradient-to-br from-emerald-400 to-teal-600"></span>
+              </div>
+              <span class="text-white/55"><strong class="text-white font-semibold">250+</strong> students training</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/55">
+              <span class="text-gold-500 tracking-tight">★★★★★</span>
+              <strong class="text-white font-semibold">4.9</strong><span class="text-white/40">/ 5 rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Player Card -->
+        <div class="reveal relative">
+          <!-- floating decorations -->
+          <div class="hidden sm:block absolute -top-6 -left-6 w-16 h-16 rounded-full anim-float-2"
+               style="background:radial-gradient(circle at 32% 30%, #ff6b4a, #b91c1c 62%, #4c0519); box-shadow:0 18px 45px -14px rgba(185,28,28,.85);">
+            <span class="absolute inset-0 rounded-full" style="background:linear-gradient(90deg,transparent 46%,rgba(255,255,255,.75) 50%,transparent 54%)"></span>
+          </div>
+          <div class="hidden sm:block absolute -bottom-5 -right-3 px-4 py-2.5 rounded-2xl glass gold-edge anim-float text-xs font-semibold">
+            🔥 <span class="text-gold-400">Test Match</span> Mindset
+          </div>
+          <div class="hidden md:block absolute top-1/3 -right-8 px-4 py-2.5 rounded-2xl glass gold-edge anim-float-2 text-xs font-semibold">
+            ⚡ Speed &amp; Fitness Drills
+          </div>
+
+          <div class="player-card glass rounded-[30px] p-6 sm:p-8 overflow-hidden">
+            <div class="absolute -top-28 -right-24 w-72 h-72 rounded-full blur-3xl pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(246,201,87,.30), transparent 70%)"></div>
+            <div class="absolute -bottom-28 -left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(96,132,255,.22), transparent 70%)"></div>
+
+            <div class="relative flex items-center gap-4 sm:gap-5">
+              <div class="avatar-ring shrink-0">
+                <div class="avatar-inner w-[82px] h-[82px] sm:w-[96px] sm:h-[96px] grid place-items-center">
+                  <svg viewBox="0 0 200 240" class="w-[74%] h-[74%] translate-y-1" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="silk" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ffe9a8"/>
+                        <stop offset="50%" stop-color="#f6c957"/>
+                        <stop offset="100%" stop-color="#f59e0b"/>
+                      </linearGradient>
+                    </defs>
+                    <!-- head -->
+                    <circle cx="96" cy="44" r="17" fill="url(#silk)"/>
+                    <rect x="79" y="42" width="34" height="7" rx="3.5" fill="url(#silk)" opacity=".85"/>
+                    <!-- torso -->
+                    <path d="M96 62 L120 71 L114 140 L78 140 L72 71 Z" fill="url(#silk)"/>
+                    <!-- arms -->
+                    <path d="M118 78 L130 118 L122 132" stroke="url(#silk)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M76 78 L104 114 L117 127" stroke="url(#silk)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <!-- bat -->
+                    <path d="M115 122 L137 224 L155 219 L133 120 Z" fill="url(#silk)"/>
+                    <path d="M126 118 L120 132 L134 135 L140 121 Z" fill="#f59e0b" opacity=".85"/>
+                    <!-- legs -->
+                    <path d="M78 138 L63 208 L82 211 L92 140 Z" fill="url(#silk)"/>
+                    <path d="M114 138 L133 203 L114 209 L103 140 Z" fill="url(#silk)"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="min-w-0">
+                <p class="text-[10px] tracking-[.32em] text-gold-400 font-bold">HEAD COACH</p>
+                <h3 class="text-xl sm:text-2xl font-display font-extrabold mt-1 truncate">Avinash Kumar</h3>
+                <p class="text-sm text-white/50 mt-1">Batting · Fitness · Mindset</p>
+                <span class="inline-flex items-center gap-1.5 mt-2.5 text-[11px] font-semibold rounded-full px-2.5 py-1"
+                      style="background:rgba(16,185,129,.12); border:1px solid rgba(16,185,129,.35); color:#5eead4;">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified Coach
+                </span>
+              </div>
+            </div>
+
+            <div class="relative grid grid-cols-3 gap-3 mt-7">
+              <div class="stat-chip px-3 py-3.5 text-center">
+                <p class="font-display font-extrabold text-lg sm:text-xl text-gold-grad">12+</p>
+                <p class="text-[10px] sm:text-[11px] text-white/45 mt-1 tracking-wide">Years Exp.</p>
+              </div>
+              <div class="stat-chip px-3 py-3.5 text-center">
+                <p class="font-display font-extrabold text-lg sm:text-xl text-gold-grad">8.5K</p>
+                <p class="text-[10px] sm:text-[11px] text-white/45 mt-1 tracking-wide">Runs Scored</p>
+              </div>
+              <div class="stat-chip px-3 py-3.5 text-center">
+                <p class="font-display font-extrabold text-lg sm:text-xl text-gold-grad">250+</p>
+                <p class="text-[10px] sm:text-[11px] text-white/45 mt-1 tracking-wide">Students</p>
+              </div>
+            </div>
+
+            <div class="relative mt-6 rounded-2xl p-4 sm:p-5" style="background:rgba(0,0,0,.32); border:1px solid rgba(255,255,255,.08);">
+              <p class="text-[13px] sm:text-sm text-white/70 leading-relaxed italic">
+                “Talent se match nahi jeeta jata — <span class="text-gold-400 font-semibold not-italic">discipline, technique aur intent</span> se jeeta jata hai. Har practice session ek final ki tarah khelo.”
+              </p>
+              <div class="mt-3 flex items-center gap-2 text-[11px] text-white/35 tracking-wide uppercase">
+                <span class="w-5 h-[1px] bg-gold-500/60"></span> Coach Avinash
+              </div>
+            </div>
+
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener"
+               class="relative mt-5 w-full inline-flex items-center justify-center gap-2.5 rounded-2xl py-3.5 text-sm font-semibold btn-ghost">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+              Join our Telegram Community
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee-wrap relative border-y border-white/10 py-4 overflow-hidden"
+       style="background:linear-gradient(90deg, rgba(246,201,87,.02), rgba(246,201,87,.09), rgba(246,201,87,.02));">
+    <div class="marquee-track flex w-max">
+      <div class="flex items-center gap-10 px-5 text-[11px] sm:text-xs font-bold tracking-[.28em] uppercase text-gold-400/80">
+        <span class="whitespace-nowrap">🏏 Batting Technique</span><span>•</span>
+        <span class="whitespace-nowrap">⚡ Fitness Drills</span><span>•</span>
+        <span class="whitespace-nowrap">🎯 Match Simulation</span><span>•</span>
+        <span class="whitespace-nowrap">🧠 Mental Conditioning</span><span>•</span>
+        <span class="whitespace-nowrap">🎥 Video Analysis</span><span>•</span>
+        <span class="whitespace-nowrap">🏆 Tournament Prep</span><span>•</span>
+      </div>
+      <div class="flex items-center gap-10 px-5 text-[11px] sm:text-xs font-bold tracking-[.28em] uppercase text-gold-400/80" aria-hidden="true">
+        <span class="whitespace-nowrap">🏏 Batting Technique</span><span>•</span>
+        <span class="whitespace-nowrap">⚡ Fitness Drills</span><span>•</span>
+        <span class="whitespace-nowrap">🎯 Match Simulation</span><span>•</span>
+        <span class="whitespace-nowrap">🧠 Mental Conditioning</span><span>•</span>
+        <span class="whitespace-nowrap">🎥 Video Analysis</span><span>•</span>
+        <span class="whitespace-nowrap">🏆 Tournament Prep</span><span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STATS ================= -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="reveal glass rounded-2xl p-5 sm:p-7 text-center">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-gold-grad"><span data-count="12">0</span>+</p>
+          <p class="text-xs sm:text-sm text-white/50 mt-2 tracking-wide">Years of Experience</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-5 sm:p-7 text-center">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-gold-grad"><span data-count="8500">0</span>+</p>
+          <p class="text-xs sm:text-sm text-white/50 mt-2 tracking-wide">Runs Scored</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-5 sm:p-7 text-center">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-gold-grad"><span data-count="250">0</span>+</p>
+          <p class="text-xs sm:text-sm text-white/50 mt-2 tracking-wide">Students Trained</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-5 sm:p-7 text-center">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-gold-grad"><span data-count="4.9" data-dec="1">0</span>★</p>
+          <p class="text-xs sm:text-sm text-white/50 mt-2 tracking-wide">Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMS ================= -->
+  <section id="programs" class="py-16 sm:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="reveal max-w-2xl">
+        <span class="text-[11px] tracking-[.3em] text-gold-500 font-bold uppercase">Training Programs</span>
+        <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-tight">
+          Apna <span class="text-gold-grad">Game Plan</span> Choose Karo
+        </h2>
+        <p class="mt-4 text-white/55 text-[15px] leading-relaxed">
+          Har level ke cricketer ke liye structured batches — beginner se elite tak. Har program me live sessions,
+          drills aur Telegram community support included hai.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 mt-12">
+
+        <!-- Card 1 -->
+        <div class="prog-card p-6 sm:p-7 reveal flex flex-col">
+          <div class="flex items-start justify-between">
+            <div class="icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <span class="text-[10px] tracking-[.2em] text-white/35 font-bold uppercase mt-2">Level 01</span>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-xl">Beginner Bootcamp</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Cricket ki strong foundation — grip, stance, basics aur fitness ka perfect start.</p>
+          <ul class="mt-5 space-y-2.5 text-sm text-white/65 flex-1">
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Batting &amp; bowling basics</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Fielding &amp; catching drills</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Weekly live session</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Telegram doubt support</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <p class="font-display font-extrabold text-2xl">₹1,499 <span class="text-sm font-medium text-white/40">/ month</span></p>
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="btn-ghost mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold">Join on Telegram</a>
+          </div>
+        </div>
+
+        <!-- Card 2 (Featured) -->
+        <div class="prog-card prog-featured p-6 sm:p-7 reveal flex flex-col md:-mt-3 md:mb-3">
+          <div class="flex items-start justify-between">
+            <div class="icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.5L12 17.1 6.1 20l1.2-6.5L2.5 9l6.6-.9z"/></svg>
+            </div>
+            <span class="text-[10px] tracking-[.2em] font-bold uppercase mt-2 px-2.5 py-1 rounded-full" style="background:rgba(246,201,87,.16); border:1px solid rgba(246,201,87,.4); color:#ffdb7a;">Most Popular</span>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-xl">Pro Batting Mastery</h3>
+          <p class="mt-2 text-sm text-white/55 leading-relaxed">Cover drive, pull, cut — Kohli-style technique breakdown with video analysis.</p>
+          <ul class="mt-5 space-y-2.5 text-sm text-white/70 flex-1">
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Advanced shot technique</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Footwork &amp; timing drills</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Video analysis + feedback</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Match simulation sessions</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Mental conditioning</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <p class="font-display font-extrabold text-2xl text-gold-grad">₹2,999 <span class="text-sm font-medium text-white/40">/ month</span></p>
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="btn-gold shine-wrap mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold">Start Training Now</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="prog-card p-6 sm:p-7 reveal flex flex-col">
+          <div class="flex items-start justify-between">
+            <div class="icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="text-[10px] tracking-[.2em] text-white/35 font-bold uppercase mt-2">Level 03</span>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-xl">Elite 1-on-1</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Personal coach ke saath fully customised plan — tournament level preparation.</p>
+          <ul class="mt-5 space-y-2.5 text-sm text-white/65 flex-1">
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Personal coaching sessions</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Custom training roadmap</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Diet &amp; fitness chart</li>
+            <li class="flex gap-2.5"><span class="text-gold-500">✓</span> Priority 1-on-1 support</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <p class="font-display font-extrabold text-2xl">₹5,999 <span class="text-sm font-medium text-white/40">/ month</span></p>
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="btn-ghost mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold">Apply Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section id="why" class="py-16 sm:py-24 scroll-mt-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="text-[11px] tracking-[.3em] text-gold-500 font-bold uppercase">Why Choose Us</span>
+        <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-tight">
+          Sirf Coaching Nahi — <span class="text-gold-grad">Complete Transformation</span>
+        </h2>
+        <p class="mt-4 text-white/55 text-[15px] leading-relaxed">
+          Har session me technique, fitness aur mental strength par equal focus. Kyunki modern cricket me sirf talent kaafi nahi hota.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mt-12">
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Pro Technique Breakdown</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Har shot ka slow-motion analysis — grip, backlift, contact point aur follow-through.</p>
+        </div>
+
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Fitness &amp; Speed Drills</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Agility ladders, sprint work, core strength — body ko match-ready banane ke liye.</p>
+        </div>
+
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4a6 6 0 0 1 4-10.5A6 6 0 0 0 12 2a6 6 0 0 0-6 9.5A6 6 0 0 1 10 22z"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Mental Conditioning</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Pressure me calm rehna, chase karna aur failure se bounce back karna — sab sikhaya jata hai.</p>
+        </div>
+
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Video Analysis</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Apni batting clips bhejo, detailed feedback aur correction plan turant pao.</p>
+        </div>
+
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20M2 12h20"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Match Simulation</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Net practice se aage badho — real match scenarios, target chase aur death overs.</p>
+        </div>
+
+        <div class="feat-card p-6 reveal">
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="mt-5 font-display font-bold text-lg">Telegram Community</h3>
+          <p class="mt-2 text-sm text-white/50 leading-relaxed">Daily tips, doubt clearing aur fellow cricketers ke saath ek strong network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS ================= -->
+  <section id="reviews" class="py-16 sm:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        <div class="max-w-xl">
+          <span class="text-[11px] tracking-[.3em] text-gold-500 font-bold uppercase">Reviews</span>
+          <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-tight">
+            Players Ka <span class="text-gold-grad">Verdict</span>
+          </h2>
+        </div>
+        <div class="flex items-center gap-3 chip rounded-2xl px-4 py-3">
+          <span class="text-gold-500 text-lg tracking-tighter">★★★★★</span>
+          <span class="text-sm text-white/55"><strong class="text-white">4.9</strong> from 180+ players</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-12">
+        <div class="review-card p-6 reveal">
+          <div class="flex items-center gap-3">
+            <span class="w-11 h-11 rounded-full grid place-items-center font-bold text-ink-900" style="background:linear-gradient(140deg,#ffe9a8,#f59e0b);">R</span>
+            <div>
+              <p class="font-semibold text-sm">Rohit Sharma <span class="text-white/35 font-normal">· U-19 Player</span></p>
+              <p class="text-gold-500 text-xs tracking-tighter mt-0.5">★★★★★</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/60 leading-relaxed">
+            “3 mahine me meri batting stance hi badal gayi. Video analysis ne meri har galti clearly dikha di. Ab confidence next level hai.”
+          </p>
+        </div>
+
+        <div class="review-card p-6 reveal">
+          <div class="flex items-center gap-3">
+            <span class="w-11 h-11 rounded-full grid place-items-center font-bold text-ink-900" style="background:linear-gradient(140deg,#ffe9a8,#f59e0b);">S</span>
+            <div>
+              <p class="font-semibold text-sm">Sahil Verma <span class="text-white/35 font-normal">· All-Rounder</span></p>
+              <p class="text-gold-500 text-xs tracking-tighter mt-0.5">★★★★★</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/60 leading-relaxed">
+            “Fitness drills aur mental conditioning sessions ne mera game completely change kar diya. Telegram group ki daily tips super helpful hain.”
+          </p>
+        </div>
+
+        <div class="review-card p-6 reveal">
+          <div class="flex items-center gap-3">
+            <span class="w-11 h-11 rounded-full grid place-items-center font-bold text-ink-900" style="background:linear-gradient(140deg,#ffe9a8,#f59e0b);">A</span>
+            <div>
+              <p class="font-semibold text-sm">Arjun Singh <span class="text-white/35 font-normal">· Beginner</span></p>
+              <p class="text-gold-500 text-xs tracking-tighter mt-0.5">★★★★★</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/60 leading-relaxed">
+            “Zero se shuru kiya tha. Coach ne basics itne simple tarike se sikhaye ki ab district level trials ke liye ready hoon.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="py-16 sm:py-24 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span class="text-[11px] tracking-[.3em] text-gold-500 font-bold uppercase">FAQ</span>
+        <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-tight">
+          Aksar Puche <span class="text-gold-grad">Sawaal</span>
+        </h2>
+      </div>
+
+      <div class="mt-12 space-y-3">
+        <div class="faq-item reveal" data-faq>
+          <button class="w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+            <span class="font-display font-semibold text-[15px] sm:text-base">Kya ye coaching beginners ke liye hai?</span>
+            <span class="faq-icon text-2xl text-white/40 shrink-0 leading-none">+</span>
+          </button>
+          <div class="faq-body">
+            <p class="px-5 sm:px-6 pb-5 text-sm text-white/55 leading-relaxed">
+              Bilkul! Beginner Bootcamp specifically zero-level players ke liye design kiya gaya hai. Grip, stance, basics aur fitness — sab step-by-step sikhaya jata hai.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+            <span class="font-display font-semibold text-[15px] sm:text-base">Sessions online hote hain ya offline?</span>
+            <span class="faq-icon text-2xl text-white/40 shrink-0 leading-none">+</span>
+          </button>
+          <div class="faq-body">
+            <p class="px-5 sm:px-6 pb-5 text-sm text-white/55 leading-relaxed">
+              Live sessions online hote hain taaki aap kahin se bhi join kar sako. Saath hi Telegram group me recorded drills, daily tips aur doubt clearing available rehti hai.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+            <span class="font-display font-semibold text-[15px] sm:text-base">Telegram join karne ke baad kya milega?</span>
+            <span class="faq-icon text-2xl text-white/40 shrink-0 leading-none">+</span>
+          </button>
+          <div class="faq-body">
+            <p class="px-5 sm:px-6 pb-5 text-sm text-white/55 leading-relaxed">
+              Free cricket tips, technique breakdowns, fitness routines, batch updates aur ek active community jahan aap apne doubts directly puchh sakte ho.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+            <span class="font-display font-semibold text-[15px] sm:text-base">Coaching kitne din me results degi?</span>
+            <span class="faq-icon text-2xl text-white/40 shrink-0 leading-none">+</span>
+          </button>
+          <div class="faq-body">
+            <p class="px-5 sm:px-6 pb-5 text-sm text-white/55 leading-relaxed">
+              Consistent practice ke saath 4–6 weeks me technique aur fitness me clear improvement dikhne lagta hai. Real match performance 2–3 months me peak hoti hai.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="pb-20 sm:pb-28 pt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="reveal relative overflow-hidden rounded-[32px] glass gold-edge px-6 sm:px-12 py-12 sm:py-16 text-center">
+        <div class="absolute -top-24 left-1/4 w-72 h-72 rounded-full blur-3xl pointer-events-none"
+             style="background:radial-gradient(circle, rgba(246,201,87,.28), transparent 70%)"></div>
+        <div class="absolute -bottom-28 right-1/4 w-80 h-80 rounded-full blur-3xl pointer-events-none"
+             style="background:radial-gradient(circle, rgba(96,132,255,.20), transparent 70%)"></div>
+
+        <div class="relative">
+          <span class="inline-flex items-center gap-2 chip rounded-full px-4 py-1.5 text-[11px] tracking-[.2em] uppercase text-gold-400 font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse"></span> Free to Join
+          </span>
+
+          <h2 class="mt-6 font-display font-extrabold text-3xl sm:text-4xl lg:text-[52px] leading-[1.08]">
+            Cricket Sikhna Hai?<br>
+            <span class="text-gold-grad">Abhi Join Karo.</span>
+          </h2>
+
+          <p class="mt-5 text-white/55 max-w-xl mx-auto text-[15px] leading-relaxed">
+            Telegram community me shamil ho jao — free cricket tips, live drill updates aur batch announcements sabse pehle yahin milenge.
+          </p>
+
+          <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener"
+             class="btn-gold shine-wrap mt-9 inline-flex items-center justify-center gap-3 rounded-2xl px-8 sm:px-10 py-4.5 py-4 text-[15px] sm:text-base font-bold">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+            Join Telegram Channel
+          </a>
+
+          <p class="mt-5 text-xs text-white/35 tracking-wide">t.me/Cricketloverstg · 100% Free · Instant Access</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-xl grid place-items-center text-lg"
+                style="background:linear-gradient(140deg,#ffe9a8,#f6c957 40%,#f59e0b);">🏏</span>
+          <span class="leading-none">
+            <span class="block font-display font-extrabold text-base">AVINASH <span class="text-gold-grad">CRICKETER</span></span>
+            <span class="block text-[10px] tracking-[.3em] text-white/40 mt-1">PRO CRICKET ACADEMY</span>
+          </span>
+        </div>
+        <p class="mt-5 text-sm text-white/45 leading-relaxed max-w-sm">
+          Premium cricket coaching for every passionate player. Technique, fitness aur mindset — teeno ka complete package.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-sm tracking-wide">Quick Links</h4>
+        <ul class="mt-4 space-y-3 text-sm text-white/50">
+          <li><a href="#programs" class="hover:text-gold-400 transition-colors">Programs</a></li>
+          <li><a href="#why" class="hover:text-gold-400 transition-colors">Why Us</a></li>
+          <li><a href="#reviews" class="hover:text-gold-400 transition-colors">Reviews</a></li>
+          <li><a href="#faq" class="hover:text-gold-400 transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-sm tracking-wide">Connect</h4>
+        <ul class="mt-4 space-y-3 text-sm text-white/50">
+          <li>
+            <a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold-400 transition-colors">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+              Telegram Community
+            </a>
+          </li>
+          <li><a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors">Batch Enquiry</a></li>
+          <li><a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors">Free Cricket Tips</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider-gold mt-10"></div>
+
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/35">
+      <p>© <span id="year"></span> Avinash Cricketer Academy. All rights reserved.</p>
+      <p>Made for passionate cricketers 🇮🇳</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING TELEGRAM ================= -->
+<a href="https://t.me/Cricketloverstg" target="_blank" rel="noopener" aria-label="Join Telegram"
+   class="tg-float relative rounded-full w-14 h-14 grid place-items-center">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.6 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17-6.6c.8-.3 1.5.2 1.5 1.6z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Navbar scroll state ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Mobile menu ---------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.classList.contains('hidden') &&
+        !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach((el, i) => {
+    el.style.transitionDelay = ((i % 4) * 70) + 'ms';
+    revealObserver.observe(el);
+  });
+
+  /* ---------- Animated counters ---------- */
+  const counters = document.querySelectorAll('[data-count]');
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const decimals = el.dataset.dec ? parseInt(el.dataset.dec, 10) : 0;
+      const duration = 1700;
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = target * easeOutCubic(progress);
+        el.textContent = decimals
+          ? value.toFixed(decimals)
+          : Math.floor(value).toLocaleString('en-IN');
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = decimals ? target.toFixed(decimals) : target.toLocaleString('en-IN');
+      };
+      requestAnimationFrame(step);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach((c) => counterObserver.observe(c));
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('[data-faq]').forEach((item) => {
+    const btn = item.querySelector('button');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('[data-faq]').forEach((el) => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ---------- Smooth anchor scroll (fallback for older browsers) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      if (id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 96;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
